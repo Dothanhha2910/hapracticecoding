@@ -74,16 +74,13 @@ public class Array {
         int diagonal1 = 0;
         int diagonal2 = 0;
         for(int row = 0; row < array.length; row++){
-            for (int col=0; col<=row; row++){
-                diagonal1 += array[row][col];
-            }
-        }
-        for(int row = array.length-1; row >= 0 ; row--){
-            for (int col=0; col<=row; row++){
-                diagonal1 += array[row][col];
-            }
-        }
-        
+            if (array.length - row - 1 < 0){
+              break;
+            } else {
+              diagonal1 += array[row][row];
+              diagonal2 += array[array.length - row - 1][array.length - row -1];
+            }   
+          }
         // compare all elements in array colSums to the first element
         String checkInvalidCol = " ";
         for(int q=0; q<colSums.length; q++){

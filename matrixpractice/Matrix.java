@@ -1,6 +1,5 @@
 package matrixpractice;
 
-
 public class Matrix {
     private int[][] matrix;
 
